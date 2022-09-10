@@ -4,7 +4,20 @@ const BrowserWindow = electron.BrowserWindow;
 const path = require("path");
 const isDev = require("electron-is-dev");
 
-require('../src/message-control/main');
+const {ipcMain} = require('electron');
+const sqlite3 = require('sqlite3').verbose();
+let dbFile = path.resolve(app.getAppPath(), 'public', 'users.db')
+  
+const db = new sqlite3.Database(dbFile);
+
+
+ipcMain.on('async',(event, args)=>{
+    const sql=args;
+    db.all(sql, (err, row)=>{
+        event.reply('async-reply',(err && err.message)|| row);
+    });
+    
+});
 
 let mainWindow;
 function createWindow() {
@@ -24,6 +37,7 @@ function createWindow() {
   );
   mainWindow.on("closed", () => (mainWindow = null));
 }
+
 
 app.on("ready", createWindow);
 app.on("window-all-closed", () => {

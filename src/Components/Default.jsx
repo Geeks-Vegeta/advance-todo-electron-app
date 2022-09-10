@@ -8,10 +8,11 @@ const Default=()=>{
 
     useEffect(()=>{
         const sql="select * from task where finish='false'";
-
         send(sql).then((result)=>{
+            console.log(result);
             setTask(result);
         })
+        console.log(task)
 
     },[])
 
@@ -19,7 +20,6 @@ const Default=()=>{
     const checking=(id, idx)=>{
         const new_sql=`update task set finish='true' where id=${id}`;
         send(new_sql).then((result)=>{
-            console.log(result)
             setTask(result);
         })
         setTask((data)=>data.filter(i=>i.id !== idx));
