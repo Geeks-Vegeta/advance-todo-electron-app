@@ -19,7 +19,7 @@ $ npm start
 
 You will now able to view advance-todo app
 
-<img src="https://github.com/Geeks-Vegeta/advance-todo-electron-app/blob/main/public/img/home.png" width="700">
+<img src="https://github.com/Geeks-Vegeta/advance-todo-electron-app/blob/main/public/img/home.PNG" width="700">
 <p> This is initial window of an application where you can find your  tasks
 </p>
 
