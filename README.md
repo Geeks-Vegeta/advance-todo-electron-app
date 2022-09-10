@@ -25,7 +25,7 @@ You will now able to view advance-todo app
 
 <br/>
 
-<img src="https://github.com/Geeks-Vegeta/advance-todo-electron-app/blob/main/public/img/finish.png" width="700">
+<img src="https://github.com/Geeks-Vegeta/advance-todo-electron-app/blob/main/public/img/finish.PNG" width="700">
 <p> This is finished task window of an application where you can find your finished tasks
 </p>
 
